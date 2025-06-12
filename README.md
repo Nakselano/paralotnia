@@ -241,6 +241,20 @@ main = print(del 6 [4,5,6,7])
 ZADANIE 6d ^
 
 ```haskell
+split::Int ->  [Int] -> ([Int],[Int])
+split _ [] = ([],[]) 
+split n (x:xs) 
+  | n > x  = (x:l1, l2)
+  | otherwise =  (l1, x:l2)
+  where (l1,l2) = split n xs
+  
+
+main :: IO ()
+main = print(split 19 [4,5,6,7,1,4,2,76,11,9,2,3,54])
+```
+ZADANIE 6e ^
+
+```haskell
 filtr::(a -> Bool) -> [a] -> [a]
 filtr _ [] = []
 filtr p (x:xs)
