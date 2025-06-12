@@ -97,6 +97,24 @@ main = do
 ZADANIE 5 ^
 
 ```haskell
+fibonacci:: Integer -> Integer 
+fibonacci 0 = 0
+fibonacci 1 = 1
+fibonacci x = fibonacci(x-1) + fibonacci(x - 2)
+
+
+fList :: Integer -> [Integer]
+fList n = [fibonacci x | x <- [0..n]]
+
+
+main::IO()
+main = do
+  putStr "Fibonacci  = "
+  print(fList 5)
+```
+ZADANIE 5 - z tym, że tutaj tworzymy dodatkowo funkcje pomocniczą, która wywołuje funkcje główną dla liczb od 0 do n, a następnie zapisuje wartości do listy - trochę przerost formy nad treścią imo, ale młody w głowie mi zamieszał
+
+```haskell
 minmax::Integer -> Integer -> Integer -> Integer
 minmax x y z =
   let mi = minimum [x,y,z]
